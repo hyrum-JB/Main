@@ -17,16 +17,23 @@
 
     <form name="loginForm" id="login" method="post" >
         <p>
-            <label class="stepcount" for="username">Email Address</label><br>
+            <label class="stepcount" for="phoneNum">Phone number</label><br>
+            <input class="stepcount" type="text" id="phoneNum" name="phoneNum" size="25" onchange="setphoneNum()" required >
+        </p>
+        <p>
+            <input class="btn btn-lg btn-primary" id="loginbtn" type="button" onclick="sendCode()" value="send code">
+        </p>
+        <!-- <p>
+            <label class="stepcount" for="username">Phone number</label><br>
             <input class="stepcount" type="text" id="username" name="username" size="25" onchange="setusername()" required >
         </p>
         <p>
-            <label class="stepcount" for="password">Password</span></label><br>
+            <label class="stepcount" for="password">1 use CODE</span></label><br>
             <input class="stepcount" type="password" id="password" name="pwd" size="25" onchange="setuserpassword()" required >
         </p>
         <p>
             <input class="btn btn-lg btn-primary" id="loginbtn" type="button" onclick="userlogin()" value="Login">
-        </p>
+        </p> -->
         <p>
             <a class="stepcount" id="newusr" href="/createcustomer.html">Create account</a>
         </p>
