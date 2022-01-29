@@ -23,6 +23,13 @@
         <p>
             <input class="btn btn-lg btn-primary" id="loginbtn" type="button" onclick="sendCode()" value="send code">
         </p>
+        <p>
+            <label class="stepcount" for="">input code</label><br>
+            <input class="stepcount" type="text" id="oneTimePasscode" name="oneTimePasscode" size="25" onchange="setCode()" required >
+        </p>
+        <p>
+            <input class="btn btn-lg btn-primary" id="loginbtn" type="button" onclick="userLogin()" value="Login">
+        </p>
         <!-- <p>
             <label class="stepcount" for="username">Phone number</label><br>
             <input class="stepcount" type="text" id="username" name="username" size="25" onchange="setusername()" required >

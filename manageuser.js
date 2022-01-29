@@ -3,6 +3,7 @@
 let userName = "";
 let password = "";
 let phoneNumber = "";
+let oneTimePasscode = "";
 let verifypassword = "";
 let passwordRegEx=/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!]).{6,40})/;
 
@@ -58,21 +59,23 @@ function sendCode(){
     });
 
 }
-// function userlogin(){
-//     setuserpassword();
-//     setusername();
-//     $.ajax({
-//         type: 'POST',
-//         url: 'https://dev.stedi.me/twofactorlogin/986-497-827',
-//         data: JSON.stringify({userName, password}),
-//         success: function(data) {
-//             window.location.href = "/timer.html#"+data;//add the token to the url
-//         },
-//         contentType: "application/text",
-//         dataType: 'text'
-//     });
 
-// }
+function setCode(){
+    oneTimePasscode = $("#oneTimePasscode").val();
+}
+
+function userLogin(){
+    $.ajax({
+        type: 'POST',
+        url: 'https://dev.stedi.me/twofactorlogin',
+        data:JSON.stringify({"phoneNumber": phoneNumber,"oneTimePassword": oneTimePasscode}),
+         success: function(data) {
+            window.location.href = "/timer.html#"+data;//add the token to the url
+         },
+        contentType: "application/text",
+        dataType: 'text' })
+
+}
 
 function readonlyforms(formid){
     form = document.getElementById(formid);
